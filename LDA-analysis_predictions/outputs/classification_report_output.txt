@@ -1,0 +1,107 @@
+LDA Classification Report - 2026-01-16 15:10:38
+============================================================
+
+============================================================
+STEP 1: Loading data and model
+============================================================
+Dataset shape: (112, 9)
+Loaded LDA model from: C:\Users\diana\Downloads\data-analysis-LDA\lda_model.pkl
+
+============================================================
+STEP 2: Making Predictions
+============================================================
+Predictions completed for 112 samples
+
+============================================================
+STEP 3: Classification Report
+============================================================
+
+Detailed Classification Report:
+============================================================
+                     precision    recall  f1-score   support
+
+         Low income       0.50      1.00      0.67         3
+Lower middle income       0.67      0.35      0.46        23
+Upper middle income       0.62      0.89      0.73        35
+        High income       1.00      0.86      0.93        51
+
+           accuracy                           0.77       112
+          macro avg       0.70      0.77      0.69       112
+       weighted avg       0.80      0.77      0.76       112
+
+
+============================================================
+STEP 4: Performance Metrics by Income Group
+============================================================
+
+Performance Metrics Table:
+       Income Group  Precision  Recall  F1-Score  Support
+         Low income      0.500   1.000     0.667        3
+Lower middle income      0.667   0.348     0.457       23
+Upper middle income      0.620   0.886     0.729       35
+        High income      1.000   0.863     0.926       51
+
+============================================================
+STEP 5: Overall Model Performance
+============================================================
+
+Overall Accuracy: 0.7679 (76.79%)
+Macro Average Precision: 0.6967
+Macro Average Recall: 0.7741
+Macro Average F1-Score: 0.6949
+Weighted Average Precision: 0.7994
+Weighted Average Recall: 0.7679
+Weighted Average F1-Score: 0.7615
+
+============================================================
+STEP 6: Interpretation
+============================================================
+
+------------------------------------------------------------
+Performance by Income Group:
+------------------------------------------------------------
+
+Low income:
+  Precision: 0.500 - Of all predictions for this group, 50.0% were correct
+  Recall: 1.000 - The model correctly identified 100.0% of actual Low income countries
+  F1-Score: 0.667 - Harmonic mean of precision and recall
+  Support: 3 - Number of actual samples in this group
+  [NOTE] Small sample size (3) may affect reliability of metrics
+
+Lower middle income:
+  Precision: 0.667 - Of all predictions for this group, 66.7% were correct
+  Recall: 0.348 - The model correctly identified 34.8% of actual Lower middle income countries
+  F1-Score: 0.457 - Harmonic mean of precision and recall
+  Support: 23 - Number of actual samples in this group
+
+Upper middle income:
+  Precision: 0.620 - Of all predictions for this group, 62.0% were correct
+  Recall: 0.886 - The model correctly identified 88.6% of actual Upper middle income countries
+  F1-Score: 0.729 - Harmonic mean of precision and recall
+  Support: 35 - Number of actual samples in this group
+
+High income:
+  Precision: 1.000 - Of all predictions for this group, 100.0% were correct
+  Recall: 0.863 - The model correctly identified 86.3% of actual High income countries
+  F1-Score: 0.926 - Harmonic mean of precision and recall
+  Support: 51 - Number of actual samples in this group
+
+------------------------------------------------------------
+Key Insights:
+------------------------------------------------------------
+
+Best performing group: High income (F1-Score: 0.926)
+Worst performing group: Lower middle income (F1-Score: 0.457)
+
+[WARNING] Low income group has only 3.0 samples.
+This small sample size may lead to:
+  - Lower classification performance for this group
+  - Less reliable precision/recall estimates
+  - Potential overfitting to the training data
+
+============================================================
+The classification report shows how well LDA predicts group membership.
+High precision and recall indicate good classification performance.
+============================================================
+
+Detailed classification report saved to: C:\Users\diana\Downloads\data-analysis-LDA\detailed_classification_report.csv

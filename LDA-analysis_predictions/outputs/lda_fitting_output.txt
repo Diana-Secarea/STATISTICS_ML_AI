@@ -1,0 +1,52 @@
+LDA Model Fitting - 2026-01-16 15:08:27
+============================================================
+
+============================================================
+STEP 1: Loading processed dataset
+============================================================
+Dataset shape: (112, 9)
+
+Features (X) shape: (112, 5)
+Target (y) shape: (112,)
+Number of classes: 4
+Class distribution:
+  Class 0 (Low income): 3 samples
+  Class 1 (Lower middle income): 23 samples
+  Class 2 (Upper middle income): 35 samples
+  Class 3 (High income): 51 samples
+
+============================================================
+STEP 2: Fitting LDA Model
+============================================================
+Fitting LDA model...
+
+LDA transformation complete!
+Original feature space: (112, 5)
+LDA-transformed space: (112, 2)
+
+============================================================
+STEP 3: Model Information
+============================================================
+
+Explained variance ratio:
+  LD1: 0.9252 (92.52%)
+  LD2: 0.0702 (7.02%)
+
+Total explained variance: 0.9955 (99.55%)
+
+Class names:
+  0: Low income
+  1: Lower middle income
+  2: Upper middle income
+  3: High income
+
+============================================================
+STEP 4: Saving Results
+============================================================
+LDA transformed data saved to: C:\Users\diana\Downloads\data-analysis-LDA\lda_transformed_data.csv
+
+LDA model fitted successfully!
+Model can be used for:
+  - Visualization (scatter plot)
+  - Coefficient analysis
+  - Classification

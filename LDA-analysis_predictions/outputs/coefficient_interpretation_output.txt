@@ -1,0 +1,95 @@
+Discriminant Coefficients Interpretation - 2026-01-16 15:10:50
+============================================================
+
+============================================================
+STEP 1: Loading data and model
+============================================================
+Dataset shape: (112, 9)
+Loaded LDA model from: C:\Users\diana\Downloads\data-analysis-LDA\lda_model.pkl
+
+============================================================
+STEP 2: Discriminant Coefficients
+============================================================
+
+Discriminant Coefficients Table:
+(Each row represents a discriminant function)
+(Larger absolute values indicate greater importance)
+
+                         GDP per capita  Unemployment rate  Inflation (CPI)  Life expectancy  School enrollment
+Discriminant Function 1          0.7684             1.7293           0.6522          -3.8652            -5.4866
+Discriminant Function 2         -0.6052             0.4828           0.4700          -1.8830            -1.6702
+Discriminant Function 3         -1.0334             0.2757           0.0208          -0.4111            -0.1295
+Discriminant Function 4          0.9369            -0.5087          -0.2646           1.3587             1.1649
+
+============================================================
+STEP 3: Absolute Coefficient Analysis
+============================================================
+
+Mean Absolute Coefficients (Feature Importance):
+          Feature  Mean Absolute Coefficient
+School enrollment                     2.1128
+  Life expectancy                     1.8795
+   GDP per capita                     0.8360
+Unemployment rate                     0.7491
+  Inflation (CPI)                     0.3519
+
+============================================================
+STEP 4: Creating Bar Chart Visualization
+============================================================
+  [OK] Saved: C:\Users\diana\Downloads\data-analysis-LDA\coefficient_plots\coefficient_bar_chart.png
+  [OK] Saved: C:\Users\diana\Downloads\data-analysis-LDA\coefficient_plots\overall_feature_importance.png
+
+All plots saved to: C:\Users\diana\Downloads\data-analysis-LDA\coefficient_plots
+
+============================================================
+STEP 5: Interpretation of Discriminant Coefficients
+============================================================
+
+------------------------------------------------------------
+Feature Importance Ranking:
+------------------------------------------------------------
+1. School enrollment: 2.1128
+2. Life expectancy: 1.8795
+3. GDP per capita: 0.8360
+4. Unemployment rate: 0.7491
+5. Inflation (CPI): 0.3519
+
+------------------------------------------------------------
+Interpretation:
+------------------------------------------------------------
+
+The discriminant coefficients indicate which economic indicators contribute
+most to distinguishing between income groups:
+
+1. School enrollment (coefficient: 2.1128)
+   - Education access is crucial for economic development
+   - Higher enrollment rates distinguish higher income countries
+
+2. Life expectancy (coefficient: 1.8795)
+   - Life expectancy is a key indicator of overall development
+   - Higher life expectancy typically correlates with higher income levels
+
+3. GDP per capita (coefficient: 0.8360)
+   - Higher GDP per capita strongly distinguishes higher income groups
+   - This is expected as GDP is a primary indicator of economic development
+
+
+------------------------------------------------------------
+Coefficient Sign Interpretation:
+------------------------------------------------------------
+
+For each discriminant function, the sign of coefficients indicates:
+- Positive coefficients: Higher values of this feature push towards certain income groups
+- Negative coefficients: Higher values of this feature push away from certain income groups
+
+The magnitude (absolute value) shows the strength of the contribution.
+
+============================================================
+Summary:
+============================================================
+The most important feature for distinguishing income groups is:
+  'School enrollment' with a mean absolute coefficient of 2.1128
+
+This analysis helps identify which economic indicators are most
+effective in classifying countries into income groups.
+============================================================

@@ -1,0 +1,6 @@
+High income: https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups
+GDP per capita: https://data.worldbank.org/indicator/NY.GDP.PCAP.CD?name_desc=false
+Inflation, on CPI annual % : https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?name_desc=false
+Unemployment % : https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?name_desc=false
+Life expectancy : https://data.worldbank.org/indicator/SP.DYN.LE00.IN?most_recent_year_desc=false
+School enrolment gross % : https://data.worldbank.org/indicator/SE.SEC.ENRR?most_recent_year_desc=false

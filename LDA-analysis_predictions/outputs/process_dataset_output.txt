@@ -1,0 +1,119 @@
+Dataset Processing Output - 2026-01-16 00:29:32
+============================================================
+
+============================================================
+STEP 1: Loading merged dataset
+============================================================
+Original dataset shape: (252, 8)
+Columns: ['Country Name', 'Country Code', 'GDP_per_capita', 'Unemployment_rate', 'Inflation_CPI', 'Life_expectancy', 'School_enrollment', 'Income group']
+
+Missing values per column:
+Country Name          0
+Country Code          0
+GDP_per_capita        8
+Unemployment_rate    30
+Inflation_CPI        38
+Life_expectancy       0
+School_enrollment    75
+Income group         43
+dtype: int64
+
+============================================================
+STEP 2: Cleaning - Removing rows with missing values
+============================================================
+Cleaned dataset shape: (112, 8)
+Rows removed: 140
+
+Income group distribution:
+Income group
+High income            51
+Low income              3
+Lower middle income    23
+Upper middle income    35
+Name: count, dtype: int64
+
+============================================================
+DATA DESCRIPTION TABLES
+============================================================
+
+------------------------------------------------------------
+Table 1: Missing Values (Pre-Cleaning)
+------------------------------------------------------------
+         Variable  Missing Values  % Missing
+School_enrollment              75       29.8
+     Income group              43       17.1
+    Inflation_CPI              38       15.1
+Unemployment_rate              30       11.9
+   GDP_per_capita               8        3.2
+
+------------------------------------------------------------
+Table 2: Summary Statistics (After Cleaning)
+------------------------------------------------------------
+                       Mean   Std Dev     Min        Max
+GDP per capita     23376.37  26771.99  604.27  123719.66
+Unemployment rate      6.43      4.94    0.13      33.27
+Inflation (CPI)       11.84     18.05   -1.61     171.21
+Life expectancy       75.76      5.58   60.48      84.00
+School enrollment     94.42     22.38   33.62     144.85
+
+------------------------------------------------------------
+Table 3: Country Count by Income Group (After Cleaning)
+------------------------------------------------------------
+       Income Group  Count
+        High income     51
+         Low income      3
+Lower middle income     23
+Upper middle income     35
+
+============================================================
+STEP 3: Standardization - Standardizing numeric features
+============================================================
+Standardized 5 features
+Mean of standardized features (should be ~0):
+GDP_per_capita       0.0
+Unemployment_rate   -0.0
+Inflation_CPI       -0.0
+Life_expectancy     -0.0
+School_enrollment   -0.0
+dtype: float64
+
+Std of standardized features (should be ~1):
+GDP_per_capita       1.004494
+Unemployment_rate    1.004494
+Inflation_CPI        1.004494
+Life_expectancy      1.004494
+School_enrollment    1.004494
+dtype: float64
+
+============================================================
+STEP 4: Encoding - Encoding Income group variable
+============================================================
+Income group encoding mapping:
+  0: Low income
+  1: Lower middle income
+  2: Upper middle income
+  3: High income
+
+Encoded values distribution:
+0     3
+1    23
+2    35
+3    51
+Name: count, dtype: int64
+
+============================================================
+STEP 5: Saving processed datasets
+============================================================
+Cleaned dataset saved to: C:\Users\diana\Downloads\econometrie-LDA\merged_dataset_clean.csv
+Standardized dataset saved to: C:\Users\diana\Downloads\econometrie-LDA\merged_dataset_standardized.csv
+Final processed dataset (with encoding) saved to: C:\Users\diana\Downloads\econometrie-LDA\merged_dataset_processed.csv
+
+============================================================
+Summary
+============================================================
+Original dataset: 252 rows, 8 columns
+After cleaning: 112 rows, 8 columns
+After standardization: 112 rows, 8 columns
+Final processed: 112 rows, 9 columns
+
+All processing steps completed successfully!

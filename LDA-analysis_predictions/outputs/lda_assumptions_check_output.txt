@@ -1,0 +1,190 @@
+LDA Assumptions Check - 2026-01-16 00:43:51
+============================================================
+
+============================================================
+STEP 1: Loading cleaned dataset
+============================================================
+Dataset shape: (112, 8)
+Standardized dataset shape: (112, 8)
+
+============================================================
+ASSUMPTION 1: Multivariate Normality Check
+============================================================
+
+------------------------------------------------------------
+1a. Distribution plots (KDE) by Income Group
+------------------------------------------------------------
+Generating KDE plots for each feature...
+  [OK] Saved: C:\Users\diana\Downloads\econometrie-LDA\assumptions_plots\kde_GDP_per_capita.png
+  [OK] Saved: C:\Users\diana\Downloads\econometrie-LDA\assumptions_plots\kde_Unemployment_rate.png
+  [OK] Saved: C:\Users\diana\Downloads\econometrie-LDA\assumptions_plots\kde_Inflation_CPI.png
+  [OK] Saved: C:\Users\diana\Downloads\econometrie-LDA\assumptions_plots\kde_Life_expectancy.png
+  [OK] Saved: C:\Users\diana\Downloads\econometrie-LDA\assumptions_plots\kde_School_enrollment.png
+
+All KDE plots saved to: C:\Users\diana\Downloads\econometrie-LDA\assumptions_plots
+
+------------------------------------------------------------
+1b. Shapiro-Wilk Test for Normality (Univariate)
+------------------------------------------------------------
+H0: Data is normally distributed (p > 0.05 indicates normality)
+
+GDP_per_capita           : statistic = 0.7810, p-value = 0.0000 [FAIL] Not normal
+Unemployment_rate        : statistic = 0.7866, p-value = 0.0000 [FAIL] Not normal
+Inflation_CPI            : statistic = 0.3852, p-value = 0.0000 [FAIL] Not normal
+Life_expectancy          : statistic = 0.9503, p-value = 0.0004 [FAIL] Not normal
+School_enrollment        : statistic = 0.9419, p-value = 0.0001 [FAIL] Not normal
+
+Summary:
+          Feature  Statistic      p-value Normal (p>0.05)
+   GDP_per_capita   0.781000 1.247606e-11              No
+Unemployment_rate   0.786610 1.848747e-11              No
+    Inflation_CPI   0.385227 1.383990e-19              No
+  Life_expectancy   0.950313 3.859092e-04              No
+School_enrollment   0.941898 1.028445e-04              No
+
+============================================================
+ASSUMPTION 2: Homogeneity of Covariance Matrices
+============================================================
+Comparing covariance matrices across income groups...
+
+
+Covariance matrix for High income:
+  Shape: (5, 5)
+  Sample size: 51
+[[ 7.25211023e+08 -2.33728800e+04 -4.95678960e+04  4.54496560e+04
+   1.02452135e+05]
+ [-2.33728800e+04  6.44000000e+00  2.51100000e+00 -6.86000000e-01
+   9.59400000e+00]
+ [-4.95678960e+04  2.51100000e+00  1.92990000e+01 -8.12900000e+00
+  -4.19000000e-01]
+ [ 4.54496560e+04 -6.86000000e-01 -8.12900000e+00  9.34100000e+00
+   1.53000000e+01]
+ [ 1.02452135e+05  9.59400000e+00 -4.19000000e-01  1.53000000e+01
+   2.11157000e+02]]
+
+Covariance matrix for Low income:
+  Shape: (5, 5)
+  Sample size: 3
+[[ 3.4915066e+04  8.7402700e+02 -3.6579600e+02  6.2412000e+01
+   7.2481900e+02]
+ [ 8.7402700e+02  3.2510000e+01 -3.6600000e-01  1.3216000e+01
+   3.1388000e+01]
+ [-3.6579600e+02 -3.6600000e-01  1.1103000e+01  8.9840000e+00
+   3.3580000e+00]
+ [ 6.2412000e+01  1.3216000e+01  8.9840000e+00  1.2888000e+01
+   1.5814000e+01]
+ [ 7.2481900e+02  3.1388000e+01  3.3580000e+00  1.5814000e+01
+   3.1545000e+01]]
+
+Covariance matrix for Lower middle income:
+  Shape: (5, 5)
+  Sample size: 23
+[[ 9.8705570e+05  3.4009730e+03  4.8341920e+03  2.6473480e+03
+   1.1885592e+04]
+ [ 3.4009730e+03  3.8612000e+01  1.7114000e+01  1.2018000e+01
+   4.1864000e+01]
+ [ 4.8341920e+03  1.7114000e+01  1.2387280e+03  6.4815000e+01
+  -6.5232000e+01]
+ [ 2.6473480e+03  1.2018000e+01  6.4815000e+01  2.4786000e+01
+   3.8000000e+01]
+ [ 1.1885592e+04  4.1864000e+01 -6.5232000e+01  3.8000000e+01
+   3.4197200e+02]]
+
+Covariance matrix for Upper middle income:
+  Shape: (5, 5)
+  Sample size: 35
+[[ 6.54356266e+06  4.28116000e+02  8.36112300e+03  2.72996600e+03
+   2.77634300e+03]
+ [ 4.28116000e+02  3.73390000e+01 -1.63400000e+00 -3.46000000e+00
+   2.21720000e+01]
+ [ 8.36112300e+03 -1.63400000e+00  1.88536000e+02  9.75000000e-01
+   4.04440000e+01]
+ [ 2.72996600e+03 -3.46000000e+00  9.75000000e-01  8.49700000e+00
+   2.49500000e+00]
+ [ 2.77634300e+03  2.21720000e+01  4.04440000e+01  2.49500000e+00
+   1.66155000e+02]]
+
+------------------------------------------------------------
+Covariance Matrix Differences (Frobenius norm)
+------------------------------------------------------------
+High income               vs Low income               : 725176128.789
+High income               vs Lower middle income      : 724223985.828
+High income               vs Upper middle income      : 718667481.759
+Low income                vs Lower middle income      : 952314.416
+Low income                vs Upper middle income      : 6508661.067
+Lower middle income       vs Upper middle income      : 5556525.827
+
+Average difference: 363514182.948
+
+Note: Smaller differences indicate more homogeneous covariance matrices.
+
+============================================================
+ASSUMPTION 3: Multicollinearity Check
+============================================================
+
+------------------------------------------------------------
+3a. Correlation Matrix Summary
+------------------------------------------------------------
+Correlation matrix:
+                   GDP_per_capita  Unemployment_rate  Inflation_CPI  Life_expectancy  School_enrollment
+GDP_per_capita              1.000             -0.264         -0.175            0.692              0.564
+Unemployment_rate          -0.264              1.000          0.086           -0.137              0.024
+Inflation_CPI              -0.175              0.086          1.000           -0.060             -0.148
+Life_expectancy             0.692             -0.137         -0.060            1.000              0.706
+School_enrollment           0.564              0.024         -0.148            0.706              1.000
+
+High correlations (|r| > 0.7):
+  Life_expectancy           <-> School_enrollment        : 0.706
+
+------------------------------------------------------------
+3b. Variance Inflation Factor (VIF)
+------------------------------------------------------------
+VIF > 10 indicates high multicollinearity
+
+          Feature      VIF Multicollinearity
+   GDP_per_capita 2.157828     Low (VIF<=10)
+Unemployment_rate 1.136914     Low (VIF<=10)
+    Inflation_CPI 1.060527     Low (VIF<=10)
+  Life_expectancy 2.733621     Low (VIF<=10)
+School_enrollment 2.178769     Low (VIF<=10)
+
+[OK] No features with VIF > 10 (multicollinearity is acceptable)
+
+============================================================
+ASSUMPTION 4: Feature Scaling Check
+============================================================
+Verifying that features are standardized (mean ~ 0, std ~ 1)...
+
+                   Mean   Std Dev Mean_OK Std_OK
+GDP_per_capita      0.0  1.004494    [OK]   [OK]
+Unemployment_rate  -0.0  1.004494    [OK]   [OK]
+Inflation_CPI      -0.0  1.004494    [OK]   [OK]
+Life_expectancy    -0.0  1.004494    [OK]   [OK]
+School_enrollment  -0.0  1.004494    [OK]   [OK]
+
+[OK] All features are properly standardized!
+
+============================================================
+SUMMARY OF LDA ASSUMPTIONS
+============================================================
+
+1. Multivariate Normality:
+   - 0/5 features pass Shapiro-Wilk test (p > 0.05)
+   - KDE plots saved to: C:\Users\diana\Downloads\econometrie-LDA\assumptions_plots
+
+2. Homogeneity of Covariance Matrices:
+   - Average covariance difference: 363514182.948
+   - Visual inspection of covariance matrices recommended
+
+3. Multicollinearity:
+   - 0 feature(s) with VIF > 10
+   [OK] Multicollinearity is acceptable
+
+4. Feature Scaling:
+   [OK] All features are properly standardized
+
+============================================================
+Note: LDA is relatively robust to violations of these assumptions,
+especially with adequate sample sizes. The results above provide
+guidance but may not be definitive.
+============================================================

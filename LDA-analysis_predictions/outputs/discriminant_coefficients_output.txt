@@ -1,0 +1,119 @@
+Discriminant Coefficients Analysis - 2026-01-16 15:09:07
+============================================================
+
+============================================================
+STEP 1: Loading data and model
+============================================================
+Dataset shape: (112, 9)
+Loaded LDA model from: C:\Users\diana\Downloads\data-analysis-LDA\lda_model.pkl
+
+============================================================
+STEP 2: Discriminant Coefficients
+============================================================
+
+Discriminant Coefficients:
+(Each row represents a discriminant function)
+(Larger absolute values indicate greater importance)
+
+                         GDP per capita  Unemployment rate  Inflation (CPI)  Life expectancy  School enrollment
+Discriminant Function 1          0.7684             1.7293           0.6522          -3.8652            -5.4866
+Discriminant Function 2         -0.6052             0.4828           0.4700          -1.8830            -1.6702
+Discriminant Function 3         -1.0334             0.2757           0.0208          -0.4111            -0.1295
+Discriminant Function 4          0.9369            -0.5087          -0.2646           1.3587             1.1649
+
+============================================================
+STEP 3: Variable Importance Analysis
+============================================================
+
+Feature Importance (Mean Absolute Coefficient):
+          Feature  Mean Absolute Coefficient
+School enrollment                     2.1128
+  Life expectancy                     1.8795
+   GDP per capita                     0.8360
+Unemployment rate                     0.7491
+  Inflation (CPI)                     0.3519
+
+============================================================
+STEP 4: Creating Coefficient Visualizations
+============================================================
+  [OK] Saved: C:\Users\diana\Downloads\data-analysis-LDA\results_plots\discriminant_coefficients.png
+  [OK] Saved: C:\Users\diana\Downloads\data-analysis-LDA\results_plots\coefficients_heatmap.png
+  [OK] Saved: C:\Users\diana\Downloads\data-analysis-LDA\results_plots\feature_importance.png
+
+All plots saved to: C:\Users\diana\Downloads\data-analysis-LDA\results_plots
+
+============================================================
+STEP 5: Classification Performance
+============================================================
+
+------------------------------------------------------------
+Confusion Matrix
+------------------------------------------------------------
+                          Pred Low income  Pred Lower middle income  Pred Upper middle income  Pred High income
+True Low income                         3                         0                         0                 0
+True Lower middle income                3                         8                        12                 0
+True Upper middle income                0                         4                        31                 0
+True High income                        0                         0                         7                44
+
+Overall Accuracy: 0.7679 (76.79%)
+
+------------------------------------------------------------
+Classification Report
+------------------------------------------------------------
+                     precision    recall  f1-score   support
+
+         Low income       0.50      1.00      0.67         3
+Lower middle income       0.67      0.35      0.46        23
+Upper middle income       0.62      0.89      0.73        35
+        High income       1.00      0.86      0.93        51
+
+           accuracy                           0.77       112
+          macro avg       0.70      0.77      0.69       112
+       weighted avg       0.80      0.77      0.76       112
+
+
+Detailed classification report saved to: C:\Users\diana\Downloads\data-analysis-LDA\classification_report.csv
+
+============================================================
+STEP 6: Interpretation
+============================================================
+
+Most Important Features (by mean absolute coefficient):
+  1. School enrollment: 2.1128
+  2. Life expectancy: 1.8795
+  3. GDP per capita: 0.8360
+  4. Unemployment rate: 0.7491
+  5. Inflation (CPI): 0.3519
+
+------------------------------------------------------------
+Classification Performance by Group:
+------------------------------------------------------------
+
+Low income:
+  Precision: 0.500
+  Recall: 1.000
+  F1-Score: 0.667
+  Support: 3.0
+
+Lower middle income:
+  Precision: 0.667
+  Recall: 0.348
+  F1-Score: 0.457
+  Support: 23.0
+
+Upper middle income:
+  Precision: 0.620
+  Recall: 0.886
+  F1-Score: 0.729
+  Support: 35.0
+
+High income:
+  Precision: 1.000
+  Recall: 0.863
+  F1-Score: 0.926
+  Support: 51.0
+
+============================================================
+Note: Low income group has only 3 samples, which may affect
+classification performance for this group.
+============================================================
