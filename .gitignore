@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+.venv/
+venv/
+env/
+
+# Data files (large — share separately)
+data/
+
+# Generated outputs
+outputs/
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+notebooks/
+
+# OS
+.DS_Store
+Thumbs.db
