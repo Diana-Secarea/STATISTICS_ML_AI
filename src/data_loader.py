@@ -84,6 +84,16 @@ def handle_missing(df: pd.DataFrame) -> pd.DataFrame:
     for col in ["dep_delay", "arr_delay"]:
         df[col] = df[col].fillna(df[col].median())
 
+    # cancelled flights never completed: fill flight-completion columns with 0
+    # so they are not dropped by dropna() and remain available for cancellation models
+    completion_cols = [
+        "dep_time", "taxi_out", "wheels_off", "wheels_on", "taxi_in",
+        "arr_time", "actual_elapsed_time", "air_time",
+    ]
+    for col in completion_cols:
+        if col in df.columns:
+            df[col] = df[col].fillna(0)
+
     # drop any remaining rows with NaN (tiny fraction)
     df = df.dropna()
     return df
