@@ -2,7 +2,7 @@
 
 Analysis of US domestic flight performance in 2024 using Python.  
 **Organisation:** US Airline Industry (BTS On-Time Performance Data)  
-**Course:** Software Packages — 6th semester, ECSI Faculty
+**Course:** Software Packages — 6th semester, CSIE Faculty
 
 ---
 
