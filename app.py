@@ -60,12 +60,12 @@ def get_raw():
 # ── sidebar navigation ────────────────────────────────────────────────────────
 
 PAGES = [
-    "🏠 Home",
-    "📊 Data Overview",
-    "🗺️ Geographic Analysis",
-    "⚙️ Feature Engineering",
-    "🤖 Modeling",
-    "📋 Results & Conclusions",
+    "Home",
+    "Data Overview",
+    "Geographic Analysis",
+    "Feature Engineering",
+    "Modeling",
+    "Results & Conclusions",
 ]
 
 st.sidebar.title("Navigation")
@@ -135,7 +135,7 @@ if page == PAGES[0]:
 # PAGE 2 — DATA OVERVIEW
 # =============================================================================
 elif page == PAGES[1]:
-    st.title("📊 Data Overview")
+    st.title("Data Overview")
     flights, _ = get_data()
     flights_raw = get_raw()
 
@@ -204,7 +204,7 @@ elif page == PAGES[1]:
 # PAGE 3 — GEOGRAPHIC ANALYSIS  (GeoPandas — Facility 2)
 # =============================================================================
 elif page == PAGES[2]:
-    st.title("🗺️ Geographic Analysis")
+    st.title("Geographic Analysis")
     st.markdown("**Facility 2 — GeoPandas**: airports are loaded as a GeoDataFrame and plotted on a US map coloured by average arrival delay.")
 
     flights, airports = get_data()
@@ -339,7 +339,7 @@ elif page == PAGES[3]:
 # PAGE 5 — MODELING
 # =============================================================================
 elif page == PAGES[4]:
-    st.title("🤖 Modeling")
+    st.title("Modeling")
     flights, _ = get_data()
 
     tab1, tab2, tab3 = st.tabs(["KMeans Clustering", "Logistic Regression", "OLS Regression"])
@@ -459,7 +459,7 @@ elif page == PAGES[4]:
 # PAGE 6 — RESULTS & CONCLUSIONS
 # =============================================================================
 elif page == PAGES[5]:
-    st.title("📋 Results & Conclusions")
+    st.title("Results & Conclusions")
     flights, _ = get_data()
 
     st.subheader("Key findings")

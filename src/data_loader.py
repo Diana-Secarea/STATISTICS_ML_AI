@@ -22,6 +22,7 @@ RANDOM_SEED = 42
 # Loading
 # ---------------------------------------------------------------------------
 
+# reads the full 7M-row CSV, takes random 100k sample, also reads Airports-Only.csv
 def load_raw() -> tuple[pd.DataFrame, pd.DataFrame]:
     """Return (flights_sample, airports) DataFrames."""
     flights_full = pd.read_csv(FLIGHTS_PATH, low_memory=False)
@@ -34,6 +35,7 @@ def load_raw() -> tuple[pd.DataFrame, pd.DataFrame]:
 # Missing values
 # ---------------------------------------------------------------------------
 
+# returns a table showing how many NaN values are in each column
 def summarise_missing(df: pd.DataFrame) -> pd.DataFrame:
     """Return a tidy summary of missing values per column."""
     missing = df.isna().sum()

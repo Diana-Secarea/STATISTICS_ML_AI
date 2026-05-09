@@ -20,7 +20,7 @@ def plot_delay_distribution(df: pd.DataFrame,
                              bins: int = 60) -> plt.Figure:
     """Histogram of departure (or arrival) delay with a zero-delay marker."""
     fig, ax = plt.subplots(figsize=(10, 5))
-    ax.hist(df[col].dropna(), bins=bins, color="#2196F3", edgecolor="white", linewidth=0.4)
+    ax.hist(df[col].dropna(), bins=bins, color="#F321D4", edgecolor="white", linewidth=0.4)
     ax.axvline(0, color="red", linestyle="--", linewidth=1.2, label="On-time threshold")
     ax.set_xlabel("Delay (minutes)")
     ax.set_ylabel("Number of flights")
