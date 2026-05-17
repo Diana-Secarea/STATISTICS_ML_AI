@@ -154,6 +154,35 @@ def plot_delay_small_multiples(df: pd.DataFrame, top_n: int = 5) -> plt.Figure:
 
 
 # ---------------------------------------------------------------------------
+# 7. Pearson correlation heatmap
+# ---------------------------------------------------------------------------
+
+def plot_correlation_heatmap(df: pd.DataFrame,
+                              cols: list[str] | None = None) -> plt.Figure:
+    """Lower-triangle Pearson correlation heatmap for numeric delay variables."""
+    import seaborn as sns
+
+    if cols is None:
+        cols = [
+            "dep_delay", "arr_delay", "distance", "air_time",
+            "carrier_delay", "weather_delay", "nas_delay", "late_aircraft_delay",
+        ]
+    cols = [c for c in cols if c in df.columns]
+    corr = df[cols].corr()
+
+    mask = np.triu(np.ones_like(corr, dtype=bool))
+    fig, ax = plt.subplots(figsize=(10, 8))
+    sns.heatmap(
+        corr, mask=mask, annot=True, fmt=".2f",
+        cmap="coolwarm", vmin=-1, vmax=1, ax=ax,
+        linewidths=0.5, annot_kws={"size": 9},
+    )
+    ax.set_title("Pearson Correlation Matrix — Flight Delay Variables")
+    plt.tight_layout()
+    return fig
+
+
+# ---------------------------------------------------------------------------
 # Sanity check
 # ---------------------------------------------------------------------------
 
