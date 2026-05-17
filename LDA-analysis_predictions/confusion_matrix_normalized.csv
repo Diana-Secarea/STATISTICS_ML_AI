@@ -1,0 +1,5 @@
+,Predicted Low income,Predicted Lower middle income,Predicted Upper middle income,Predicted High income
+True Low income,100.0,0.0,0.0,0.0
+True Lower middle income,13.043478260869565,34.78260869565217,52.17391304347826,0.0
+True Upper middle income,0.0,11.428571428571429,88.57142857142857,0.0
+True High income,0.0,0.0,13.725490196078432,86.27450980392157

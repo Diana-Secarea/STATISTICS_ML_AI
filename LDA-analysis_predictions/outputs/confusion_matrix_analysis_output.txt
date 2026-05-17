@@ -1,0 +1,121 @@
+Confusion Matrix Analysis - 2026-01-16 15:10:25
+============================================================
+
+============================================================
+STEP 1: Loading data and model
+============================================================
+Dataset shape: (112, 9)
+Loaded LDA model from: C:\Users\diana\Downloads\data-analysis-LDA\lda_model.pkl
+
+============================================================
+STEP 2: Generating Confusion Matrix
+============================================================
+
+Confusion Matrix Shape: (4, 4)
+Number of classes: 4
+
+============================================================
+STEP 3: Confusion Matrix (Raw Counts)
+============================================================
+
+Confusion Matrix:
+(Rows = True labels, Columns = Predicted labels)
+
+                          Predicted Low income  Predicted Lower middle income  Predicted Upper middle income  Predicted High income
+True Low income                              3                              0                              0                      0
+True Lower middle income                     3                              8                             12                      0
+True Upper middle income                     0                              4                             31                      0
+True High income                             0                              0                              7                     44
+
+============================================================
+STEP 4: Normalized Confusion Matrix (Percentages)
+============================================================
+
+Normalized Confusion Matrix (%):
+(Each row sums to 100%, showing distribution of predictions for each true class)
+
+                          Predicted Low income  Predicted Lower middle income  Predicted Upper middle income  Predicted High income
+True Low income                         100.00                           0.00                           0.00                   0.00
+True Lower middle income                 13.04                          34.78                          52.17                   0.00
+True Upper middle income                  0.00                          11.43                          88.57                   0.00
+True High income                          0.00                           0.00                          13.73                  86.27
+
+============================================================
+STEP 5: Accuracy Metrics
+============================================================
+
+Overall Accuracy: 0.7679 (76.79%)
+Correct predictions: 86 out of 112
+
+Per-Class Accuracy:
+  Low income: 1.0000 (100.00%) - 3/3 correct
+  Lower middle income: 0.3478 (34.78%) - 8/23 correct
+  Upper middle income: 0.8857 (88.57%) - 31/35 correct
+  High income: 0.8627 (86.27%) - 44/51 correct
+
+============================================================
+STEP 6: Misclassification Analysis
+============================================================
+
+Misclassification Patterns:
+(Which groups are often confused with each other)
+
+         True Group     Predicted Group  Count  Percentage
+Lower middle income Upper middle income     12   52.173913
+        High income Upper middle income      7   13.725490
+Upper middle income Lower middle income      4   11.428571
+Lower middle income          Low income      3   13.043478
+
+============================================================
+STEP 7: Creating Confusion Matrix Visualizations
+============================================================
+  [OK] Saved: C:\Users\diana\Downloads\data-analysis-LDA\confusion_matrix_plots\confusion_matrix_raw.png
+  [OK] Saved: C:\Users\diana\Downloads\data-analysis-LDA\confusion_matrix_plots\confusion_matrix_normalized.png
+
+All plots saved to: C:\Users\diana\Downloads\data-analysis-LDA\confusion_matrix_plots
+
+============================================================
+STEP 8: Interpretation
+============================================================
+
+------------------------------------------------------------
+Key Findings:
+------------------------------------------------------------
+
+1. Overall Performance:
+   - 86 out of 112 predictions were correct (76.79%)
+
+2. Low Income Group Classification:
+   - Total samples: 3
+   - Correctly classified: 3
+   - Accuracy: 1.0000 (100.00%)
+   - [WARNING] Very small sample size (3) makes classification challenging
+   - The model may struggle with this group due to limited training data
+
+3. Most Common Misclassification:
+   - Lower middle income countries are often predicted as Upper middle income
+   - Occurs 12 times (52.2% of Lower middle income cases)
+
+4. Perfect Classification:
+   - The following groups were classified with 100% accuracy:
+     * Low income
+
+------------------------------------------------------------
+Interpretation Notes:
+------------------------------------------------------------
+
+- Diagonal elements represent correct classifications
+- Off-diagonal elements represent misclassifications
+- Higher values on the diagonal indicate better performance
+- The normalized matrix shows the percentage distribution of predictions
+  for each true class, making it easier to identify confusion patterns
+
+============================================================
+This confusion matrix helps identify:
+  - Which income groups are often confused by LDA
+  - Whether low-income countries are hard to classify
+  - Overall model performance and areas for improvement
+============================================================
+
+Confusion matrix saved to: C:\Users\diana\Downloads\data-analysis-LDA\confusion_matrix.csv
+Normalized confusion matrix saved to: C:\Users\diana\Downloads\data-analysis-LDA\confusion_matrix_normalized.csv

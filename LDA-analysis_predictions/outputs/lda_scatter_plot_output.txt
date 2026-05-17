@@ -1,0 +1,57 @@
+LDA Scatter Plot - 2026-01-16 15:08:49
+============================================================
+
+============================================================
+STEP 1: Loading LDA transformed data
+============================================================
+Loaded pre-transformed LDA data from: C:\Users\diana\Downloads\data-analysis-LDA\lda_transformed_data.csv
+Dataset shape: (112, 6)
+Number of income groups: 4
+
+============================================================
+STEP 2: Creating LDA Scatter Plot
+============================================================
+Scatter plot saved to: C:\Users\diana\Downloads\data-analysis-LDA\lda_scatter_plot.png
+
+============================================================
+STEP 3: Summary Statistics by Income Group
+============================================================
+
+Mean and Standard Deviation of LDA components by Income Group:
+                       LD1                 LD2             
+                      mean    std count   mean    std count
+Income group                                               
+High income         -1.661  1.115    51  0.199  1.269    51
+Low income           4.281  0.473     3  1.842  0.344     3
+Lower middle income  2.017  1.095    23  0.156  0.879    23
+Upper middle income  0.729  0.747    35 -0.551  0.549    35
+
+------------------------------------------------------------
+Group Centroids (Mean LD1, LD2)
+------------------------------------------------------------
+                       LD1    LD2
+Income group                     
+High income         -1.661  0.199
+Low income           4.281  1.842
+Lower middle income  2.017  0.156
+Upper middle income  0.729 -0.551
+
+------------------------------------------------------------
+Euclidean Distance Between Group Centroids
+------------------------------------------------------------
+Income group         High income  ...  Upper middle income
+Income group                      ...                     
+High income                0.000  ...                2.505
+Low income                 6.165  ...                4.283
+Lower middle income        3.678  ...                1.469
+Upper middle income        2.505  ...                0.000
+
+[4 rows x 4 columns]
+
+============================================================
+Interpretation:
+============================================================
+The scatter plot shows how well LDA separates countries by income group.
+Good separation indicates that the economic indicators effectively
+distinguish between different income groups.
+============================================================

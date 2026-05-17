@@ -1,0 +1,5 @@
+,Predicted Low income,Predicted Lower middle income,Predicted Upper middle income,Predicted High income
+True Low income,3,0,0,0
+True Lower middle income,3,8,12,0
+True Upper middle income,0,4,31,0
+True High income,0,0,7,44
